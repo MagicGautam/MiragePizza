@@ -24,7 +24,6 @@ public class MainClass {
 		System.out.println("===================");
 		System.out.println("Enter Your Name\n");
 		c1.setName(sc.nextLine());
-	
 		System.out.println("Enter Your Phone Number\n");
 		c1.setPhone(sc.nextLine());	
 		System.out.println("Enter Your Email\n");
