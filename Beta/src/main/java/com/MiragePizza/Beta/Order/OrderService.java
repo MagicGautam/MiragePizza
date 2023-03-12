@@ -23,22 +23,23 @@ public class OrderService {
         this.pizzaDao = pizzaDao;
     }
 
-    public ResponseEntity<String> addOrder(Customer customer,int pizzaId) {
+    public ResponseEntity<String> addOrder(Customer customer, int pizzaId) {
         try {
-           Pizza pizza = pizzaDao.getPizzaById(pizzaId);
-            String PizzaName= pizza.getPizzaName();
-            System.out.println(PizzaName);
-            customerDao.addCustomer(customer);
-
+            // Retrieve the Pizza object from the database based on the pizzaId
+            Pizza pizza = pizzaDao.getPizzaById(pizzaId);
+            
             // Create a new instance of Order using the customer and pizza information
-            Order order = new Order(customer, pizzaId, PizzaName);
-
-            // Insert the order into the database using the OrderDao
+            Order order = new Order(customer, pizzaId, pizza.getPizzaName());
+            
+            // Add the customer to the database using the CustomerDao
+            customerDao.addCustomer(customer);
+            
+            // Add the order to the database using the OrderDao
             orderDao.addOrder(order);
-
+            
             return ResponseEntity.ok().body("Order added successfully.");
         } catch (Exception e) {
-        	System.out.println(e);
+            System.out.println(e);
             return ResponseEntity.badRequest().body("Error adding order.");
         }
     }

@@ -1,5 +1,6 @@
 package com.MiragePizza.Beta.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public List<Pizza> getAllPizzas() {
 }
 
 @GetMapping("/pizzas/{id}")
-public ResponseEntity<Pizza> getPizzaById(@PathVariable int id) {
+public ResponseEntity<Pizza> getPizzaById(@PathVariable int id) throws SQLException {
     Pizza pizza = pizzaservice.getPizzaById(id);
     if (pizza == null) {
         return ResponseEntity.notFound().build();

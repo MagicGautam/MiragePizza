@@ -40,7 +40,7 @@ public class OrderDao {
     }
 
     public void addOrder(Order order) {
-        String sql = "INSERT INTO orders (OrderID, CustomerName, CustomerPhone, CustomerEmail, CustomerAddress, PizzaID, PizzaName, OrderTime, TotalPrice, CustomerID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO orders (CustomerName, CustomerPhone, CustomerEmail, CustomerAddress, PizzaID, PizzaName, OrderTime, TotalPrice, CustomerID) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         Customer Customer=order.getCustomer();
         jdbcTemplate.update(sql,  Customer.getCustomerName(), Customer.getCustomerPhone(), Customer.getCustomerEmail(), Customer.getCustomerAddress(), order.getPizzaID(), order.getPizzaName(), order.getOrderTime(), order.getTotalPrice(), Customer.getCustomerID());
     }

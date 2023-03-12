@@ -30,7 +30,7 @@ public class PizzaDao {
         });
     }
     
-    public Pizza getPizzaById(int id) throws SQLException {
+    public Pizza getPizzaById(int PizzaID) throws SQLException {
         Connection conn = jdbcTemplate.getDataSource().getConnection();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -39,7 +39,7 @@ public class PizzaDao {
         try {
             String sql = "SELECT * FROM pizza WHERE PizzaID = ?";
             ps = conn.prepareStatement(sql);
-            ps.setInt(1, id);
+            ps.setInt(1, PizzaID);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -63,7 +63,6 @@ public class PizzaDao {
                 conn.close();
             }
         }
-        System.out.println(pizza.getPizzaDescription());
         return pizza;
     }
 }
