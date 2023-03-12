@@ -13,7 +13,7 @@ public class CustomerDAO {
             
             String url = "jdbc:mysql://localhost:3306/MiragePizza";
             String username = "root";
-            String password = "Gautam@123";
+            String password = "password";
             connection = DriverManager.getConnection(url, username, password);
             
         } catch (ClassNotFoundException | SQLException e) {
