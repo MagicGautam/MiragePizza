@@ -1,12 +1,10 @@
 package com.MiragePizza.Beta.Order;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.MiragePizza.Beta.Customer.Customer;
 import com.MiragePizza.Beta.Customer.CustomerDao;
 import com.MiragePizza.Beta.Pizza.Pizza;
@@ -25,12 +23,11 @@ public class OrderService {
         this.pizzaDao = pizzaDao;
     }
 
-    @PostMapping("/orders")
-    public ResponseEntity<String> addOrder(@RequestBody Customer customer, @RequestParam int pizzaId) {
+    public ResponseEntity<String> addOrder(Customer customer,int pizzaId) {
         try {
-            // Get pizza name from pizzaId using the PizzaDao
-            Pizza pizzaName = pizzaDao.getPizzaById(pizzaId);
-            String PizzaName= pizzaName.getPizzaName();
+           Pizza pizza = pizzaDao.getPizzaById(pizzaId);
+            String PizzaName= pizza.getPizzaName();
+            System.out.println(PizzaName);
             customerDao.addCustomer(customer);
 
             // Create a new instance of Order using the customer and pizza information
@@ -41,7 +38,12 @@ public class OrderService {
 
             return ResponseEntity.ok().body("Order added successfully.");
         } catch (Exception e) {
+        	System.out.println(e);
             return ResponseEntity.badRequest().body("Error adding order.");
         }
     }
+
+        public List<Order> getAllOrders() {
+            return orderDao.getAllOrders();
+        }
 }
