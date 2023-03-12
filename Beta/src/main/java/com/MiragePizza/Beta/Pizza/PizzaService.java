@@ -1,5 +1,6 @@
 package com.MiragePizza.Beta.Pizza;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class PizzaService {
         return pizzaDao.getAllPizzas();
     }
 
-	public Pizza getPizzaById(int id) {
-        return pizzaDao.getPizzaById(id);
+	public Pizza getPizzaById(int PizzaID) throws SQLException {
+        return pizzaDao.getPizzaById(PizzaID);
     }
 }

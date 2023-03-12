@@ -1,12 +1,12 @@
 package com.MiragePizza.Beta.Order;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import com.MiragePizza.Beta.Customer.Customer;
+import javax.persistence.GeneratedValue;
 
 public class Order {
-	private int OrderID;
+	@GeneratedValue private int OrderID;
 	private Customer Customer;
     private int PizzaID;
     private String PizzaName;
@@ -15,7 +15,7 @@ public class Order {
 
 	
 	public Order(Customer customer, int pizzaId, String pizzaName) {
-        Customer = customer;
+		Customer = customer;
         PizzaID = pizzaId;
         PizzaName = pizzaName;
         OrderTime = new Timestamp(System.currentTimeMillis());
@@ -46,8 +46,8 @@ public class Order {
 	}
 
 
-	public void setOrderID(int orderId) {
-		OrderID = orderId;
+	public void setOrderID(int orderID) {
+		OrderID = orderID;
 	}
 
 
