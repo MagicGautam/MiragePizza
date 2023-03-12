@@ -10,7 +10,7 @@ class PizzaDao{
 	static final String DB_URL = "jdbc:mysql://localhost/MiragePizza";
 	
 	static final String USER = "root";
-    static final String PASS = "Gautam@123";
+    static final String PASS = "Password";
     
     
     public List<Pizza> getAllPizzas() {
