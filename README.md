@@ -4,13 +4,15 @@ I learned how to design a system(LLD), Entity relation model, JDBC, Encapsulatio
 
 GOALS FOR THE PROJECT:
 
-[Final] To Create A Spring Boot Application of  Mirage Pizza which is able to do all CRUD operations on the Database.
-[Beta]: To Create a REST API over the existing database and code.
+[FINAL] : To create a Working webstie with a Front end and SpringBoot Backend with MYSQL Database.
+[BETA]  : To Create A Spring Boot Application of  Mirage Pizza which is able to do all CRUD operations on the Database.
 [Alpha] : To create a working system and testing it with Main Class. [DONE]
 
 
-Alpha Stage Results:
+ALPHA VERSION RELEASED!!: [11/03/2023]
+======================================
 
+Changes:
 Database: 
 
 Orders DB Modified by Prepared Statements in java; 
@@ -22,7 +24,7 @@ Output:
 ![Mirage Pizza 2](https://user-images.githubusercontent.com/55827021/224511644-ee3b1384-cf3d-4aa3-8c82-c4143b1c6660.PNG)
 
 
-BETA VERSION RELEASED!
+BETA VERSION RELEASED!    [13/03/2023]
 ==========================
 Changes: New Changes including Porting the existing project into a SpringBoot Applicaiton which is performing Get Request, Post Request on multiple databases.
 Multiple databases conencted Together.
