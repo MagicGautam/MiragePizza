@@ -47,3 +47,7 @@ Screen Shots:
 
 Customer DB gets Updated automatically by Making an Order.
 
+
+BETA 1.1
+========================
+Authentication Page, Spring Security.
